@@ -1,0 +1,109 @@
+/**
+* Stagger
+*/
+.animate .stagger {
+	opacity: 0;
+	animation: stagger ease-in 0.3s forwards 1;
+	animation-delay: calc(var(--animate-order) * 0.1s);
+}
+.animate .stagger--alt {
+	opacity: 0;
+	animation: stagger2 ease-in 0.3s forwards 1;
+	animation-delay: calc(var(--animate-order) * 0.1s);
+}
+
+@keyframes stagger {
+	from {
+		opacity: 0;
+		transform: translateY(80px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+@keyframes stagger2 {
+	from {
+		opacity: 0;
+		transform: translateY(80px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+/**
+* FadeIn
+*/
+.animate .fadeIn {
+	opacity: 0;
+	animation: fadeIn ease-in 0.3s forwards 1;
+	animation-delay: calc(var(--animate-order) * 0.1s);
+}
+.animate .fadeIn--alt {
+	opacity: 0;
+	animation: fadeIn2 ease-in 0.3s forwards 1;
+	animation-delay: calc(var(--animate-order) * 0.1s);
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn2 {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/**
+* Grow
+*/
+.grow-line--active:after {
+	opacity: 1;
+	animation: grow-active 300ms linear forwards 1;
+}
+.grow-line:after {
+	animation: grow-non-active 300ms linear forwards 1;
+}
+.grow-line:hover:after {
+	opacity: 0.5;
+	animation: grow-hover 300ms linear forwards 1;
+}
+
+@keyframes grow-active {
+	0% {
+		width: 0;
+	}
+
+	100% {
+		opacity: 1;
+		width: 100%;
+	}
+}
+@keyframes grow-non-active {
+	0% {
+		width: 100%;
+	}
+
+	100% {
+		width: 0;
+	}
+}
+@keyframes grow-hover {
+	0% {
+		width: 0;
+	}
+
+	100% {
+		width: 100%;
+	}
+}

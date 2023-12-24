@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import PageContentLayout from '../layouts/PageContentLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import CrewView from '../components/views/crew/CrewView';
+import Line from '../components/ui/Line';
+import pageBackgroundDesktop from '../assets/bg/crew/background-crew-desktop.jpg';
+import pageBackgroundTablet from '../assets/bg/crew/background-crew-tablet.jpg';
+import pageBackgroundMobile from '../assets/bg/crew/background-crew-mobile.jpg';
+
+const bgImgSrc = {
+	desktop: pageBackgroundDesktop,
+	tablet: pageBackgroundTablet,
+	mobile: pageBackgroundMobile
+};
+const pageTitle = 'Crew';
+const pageNumber = '02';
+const pageDesc = 'meet your crew';
+const allCrew = await getCollection('crew').then((res) =>
+	res.sort((a, b) => a.data.order - b.data.order)
+);
+---
+
+<Layout title={pageTitle} bgImgSrc={bgImgSrc}>
+	<PageContentLayout>
+		<div
+			class="animate flex flex-col lg:mb-[5.875rem] lg:grid lg:grid-rows-crew lg:justify-center lg:gap-x-0 lg:gap-y-[9.625rem] xl:justify-center"
+		>
+			<!-- left -->
+			<section
+				style="--animate-order:2"
+				class="stagger order-1 mb-8 text-center md:mb-[3.75rem] md:text-left lg:mx-[min(6%,3.5rem)] lg:mb-0 xl:mx-0"
+			>
+				<PageHeader pageNumber={pageNumber} text={pageDesc} />
+			</section>
+			<section
+				style="--animate-order:3"
+				class="stagger order-3 md:order-2 lg:col-start-1 lg:mx-[min(6%,3.5rem)] xl:mx-0"
+			>
+				<CrewView allCrew={allCrew} client:load />
+			</section>
+			<!-- right -->
+			<section
+				class="mdTallest:mb-12 order-2 mb-8 md:order-3 md:mb-0 md:mt-10 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0"
+			>
+				<!-- crew member image -->
+				<div
+					class="lgMinHeight:h-full flex flex-col items-center lg:w-[min(27.813rem,34vw)] xl:w-[40vw] xl:max-w-[31.25rem]"
+				>
+					<Image
+						style="--animate-order:5"
+						class="fadeIn mdTall:absolute mdTall:bottom-0 mdTall:h-[52vh] mdtaller:h-[54vh] mdTallest:h-[60vh] mdTallest:max-h-[50rem] mdMaxTall:relative block h-[13.938rem] w-[13.938rem] object-contain md:h-[33.25rem] md:w-auto lg:absolute lg:bottom-0 lg:h-auto xl:min-h-full"
+						src={allCrew[0].data.image}
+						alt={allCrew[0].id}
+						format="webp"
+						quality={100}
+						id={'crew-image'}
+					/>
+				</div>
+				<Line
+					className="mdMaxTall:block lgMinHeight:absolute lgMinHeight:bottom-0 lgMinHeight:left-1/2 lgMinHeight:block lgMinHeight:w-[38rem] md:hidden"
+				/>
+			</section>
+		</div>
+	</PageContentLayout>
+</Layout>

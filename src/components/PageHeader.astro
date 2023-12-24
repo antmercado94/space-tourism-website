@@ -1,0 +1,11 @@
+---
+type Props = {
+	pageNumber: string
+	text: string
+}
+const { pageNumber, text } = Astro.props
+---
+
+<h1 class="heading-5 text-primary-white md:pl-[0.9rem] lg:pl-0">
+	<span class="mr-[1.125rem] font-bold opacity-25 md:mr-4">{pageNumber}</span>{text}
+</h1>

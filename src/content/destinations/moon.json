@@ -1,0 +1,8 @@
+{
+	"name": "Moon",
+	"image": "./images/image-moon.webp",
+	"description": "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
+	"distance": { "value": 384400, "unit": "km" },
+	"travel": { "value": 3, "unit": "days" },
+	"order": 1
+}

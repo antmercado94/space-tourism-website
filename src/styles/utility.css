@@ -1,0 +1,29 @@
+.full-width {
+	@apply -lg:relative -lg:left-1/2 -lg:right-1/2 -lg:-ml-[50vw] -lg:-mr-[50vw] -lg:w-screen -lg:max-w-[100vw];
+}
+
+.background-filter {
+	/* backdrop-filter fallback */
+	background-color: rgba(28, 30, 38, 0.8);
+}
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+	.background-filter {
+		background: rgba(255, 255, 255, 0.04);
+		-webkit-backdrop-filter: blur(2.548rem);
+		backdrop-filter: blur(2.548rem);
+	}
+}
+
+/* padding-top classes for images on desktop */
+.crew-pt--douglas-hurley {
+	@apply lg:pt-0;
+}
+.crew-pt--mark-shuttleworth {
+	@apply lg:pt-[3rem];
+}
+.crew-pt--victor-glover {
+	@apply lg:pt-[2.67rem];
+}
+.crew-pt--anousheh-ansari {
+	@apply lg:pt-[5.35rem];
+}

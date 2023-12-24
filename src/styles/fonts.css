@@ -1,0 +1,30 @@
+@layer base {
+	@font-face {
+		font-family: 'Bellefair';
+		font-style: normal;
+		font-weight: 400;
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/Bellefair-Regular.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Barlow Condensed';
+		font-style: normal;
+		font-weight: 400;
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/BarlowCondensed-Regular.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Barlow Condensed';
+		font-style: normal;
+		font-weight: 700;
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/BarlowCondensed-Bold.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Barlow';
+		font-style: normal;
+		font-weight: 400;
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/Barlow-Regular.woff2') format('woff2');
+	}
+}

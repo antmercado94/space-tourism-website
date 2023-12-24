@@ -1,0 +1,8 @@
+{
+	"name": "Titan",
+	"image": "./images/image-titan.webp",
+	"description": "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.",
+	"distance": { "value": 1.6, "unit": "bil. km" },
+	"travel": { "value": 7, "unit": "years" },
+	"order": 4
+}

@@ -1,0 +1,49 @@
+/**
+* Responsive
+*/
+.responsive-text {
+	@apply 4xl:text-[clamp(16px,0.525rem+0.6vw,0.8vw)] text-[clamp(16px,0.525rem+0.4vw,1vw)];
+}
+
+/**
+* Nav
+*/
+.nav-text {
+	@apply font-sans text-sm uppercase leading-[1.063rem] tracking-[0.169em] lg:text-base lg:leading-[1.188rem] lg:tracking-[0.169em];
+}
+
+/**
+* Body
+*/
+.body-text {
+	@apply font-body text-pSm leading-[1.563rem] md:text-pMd md:leading-7 lg:text-p lg:leading-8 -lg:max-w-prose;
+}
+
+/**
+* Headings
+*/
+.heading-1 {
+	@apply font-serif text-h1Sm uppercase leading-[6.25rem] md:text-h1 md:leading-[9.375rem] lg:leading-[10.75rem];
+}
+.heading-2 {
+	@apply font-serif text-h2Sm uppercase leading-[4rem] md:text-h2Md md:leading-[5.75rem] lg:text-h2 lg:leading-[7.188rem];
+}
+.heading-3 {
+	@apply font-serif text-h3Sm uppercase leading-[1.75rem] md:text-h3Md md:leading-[2.875rem] lg:text-h3 lg:leading-[4rem];
+}
+.heading-4 {
+	@apply font-serif text-h4Sm uppercase leading-[1.125rem] md:text-h4Md md:leading-[1.75rem] lg:text-h4 lg:leading-[2.313rem];
+}
+.heading-5 {
+	@apply font-sans text-h5Sm uppercase leading-[1.188rem] tracking-[0.169em] md:text-h5Md md:leading-6 md:tracking-[0.211em] lg:text-h5 lg:leading-[2.125rem] lg:tracking-[0.1686em];
+}
+
+/**
+* Subheadings
+*/
+.subheading-1 {
+	@apply font-serif text-h5 uppercase leading-8;
+}
+.subheading-2 {
+	@apply font-sans text-sm uppercase leading-[1.063rem] tracking-[0.168em];
+}

@@ -1,0 +1,11 @@
+@import './fonts.css';
+@import './typography.css';
+@import './utility.css';
+@import './animations.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	@apply responsive-text flex bg-[#13151a];
+}

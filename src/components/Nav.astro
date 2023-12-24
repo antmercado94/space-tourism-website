@@ -1,0 +1,71 @@
+---
+import removeTrailingSlash from '../utils/removeTrailingSlash';
+import Line from './ui/Line';
+import { Icon } from 'astro-icon';
+type Props = {
+	routes: string[];
+};
+const { routes } = Astro.props;
+const currentPath = removeTrailingSlash(Astro.url.pathname);
+---
+
+<header>
+	<div
+		class="mb-6 flex w-full items-center justify-between px-6 pt-6 md:mb-0 md:px-0 md:pt-0 lg:mt-10 lg:pl-[3.438rem]"
+	>
+		<!-- logo -->
+		<div class="md:my-6 md:pl-[2.438rem] lg:pl-0">
+			<Icon name="logo" class="h-10 w-10 md:h-12 md:w-12" />
+		</div>
+		<!-- desktop nav -->
+		<nav class="xl:relative">
+			<!-- animated line -->
+			<div
+				style="direction:rtl"
+				class="z-50 hidden xl:absolute xl:top-1/2 xl:block xl:w-[30vw] xl:-translate-x-[calc(100%-30px)] xl:-translate-y-1/2 1.5xl:w-[29.563rem]"
+			>
+				<Line animate={true} delay={850} client:load transition:persist />
+			</div>
+			<!-- page routes -->
+			<div
+				class="background-filter hidden px-[max(3rem,6.25vw)] py-[2.438rem] md:block lg:pl-[min(8.55vw,7.688rem)] lg:pr-[min(11.35vw,10.213rem)]"
+			>
+				<ul
+					class="nav-text flex gap-[max(2.313rem,4.75vw)] pb-[0.063rem] text-primary-white lg:gap-[min(3rem,3.4vw)]"
+					id="nav-desktop"
+				>
+					{
+						routes.map((route, i) => (
+							<li
+								class={`relative flex justify-center after:pointer-events-none after:absolute after:-bottom-10 after:h-[0.188rem] after:w-0 after:bg-primary-white after:opacity-0 after:transition-colors after:content-[""] hover:after:opacity-50 ${
+									route !== currentPath
+										? 'grow-line'
+										: 'grow-line--active after:transition-colors hover:after:bg-primary-white/50'
+								}`}
+							>
+								<a href={route} class="flex">
+									<span class="mr-[0.688rem] hidden font-bold lg:inline">{'0' + i}</span>
+									{route === '/' ? 'home' : route?.split('/')[1]}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</nav>
+		<!-- mobile nav icon -->
+		<div class="group cursor-pointer md:hidden" id="sidebar-open">
+			<Icon name="menu" class="h-[1.313rem] w-6 transition-opacity group-hover:opacity-50" />
+		</div>
+	</div>
+</header>
+
+<script>
+	document.addEventListener('astro:page-load', () => {
+		// 50% opacity on hover for pseudo element animations
+		document.querySelector('#nav-desktop')?.addEventListener('mouseover', (event) => {
+			const el = event.target as HTMLElement;
+			el.closest('li')?.classList.replace('after:opacity-0', 'after:opacity-50');
+		});
+	});
+</script>

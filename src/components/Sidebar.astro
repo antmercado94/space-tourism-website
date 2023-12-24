@@ -1,0 +1,42 @@
+---
+import { fade } from 'astro:transitions';
+import { Icon } from 'astro-icon';
+import removeTrailingSlash from '../utils/removeTrailingSlash';
+type Props = {
+	routes: string[];
+};
+const { routes } = Astro.props;
+const currentPath = removeTrailingSlash(Astro.url.pathname);
+---
+
+<div
+	transition:animate={fade({ duration: '0.4s' })}
+	class="background-filter fixed right-0 top-0 h-screen w-[15.875rem] translate-x-full transition-transform md:hidden"
+	id="sidebar"
+>
+	<div class="flex flex-col gap-[4.059rem]">
+		<!-- close sidebar icon -->
+		<div class="mr-[1.653rem] mt-[2.119rem] flex justify-end">
+			<span class="group cursor-pointer" id="sidebar-close">
+				<Icon name="close" class="h-[1.313rem] w-5 transition-opacity group-hover:opacity-50" />
+			</span>
+		</div>
+		<!-- page routes -->
+		<ul class="heading-5 flex flex-col gap-8 pl-8 text-primary-white">
+			{
+				routes.map((route, i) => (
+					<li
+						class={`relative after:pointer-events-none after:absolute after:right-0 after:top-1/2 after:h-[1.938rem] after:w-1 after:-translate-y-1/2 after:bg-primary-white after:transition-opacity after:content-[""] hover:after:opacity-50 ${
+							route !== currentPath ? 'after:opacity-0' : ''
+						}`}
+					>
+						<a href={route} class="flex">
+							<span class="mr-[0.688rem] font-bold">{'0' + i}</span>
+							{route === '/' ? 'home' : route?.split('/')[1]}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</div>

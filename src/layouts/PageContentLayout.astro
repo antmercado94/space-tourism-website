@@ -1,0 +1,13 @@
+---
+import removeTrailingSlash from '../utils/removeTrailingSlash';
+
+const currentPath = removeTrailingSlash(Astro.url.pathname);
+---
+
+<main>
+	<div
+		class={`flex flex-col md:mt-10 lg:mt-[4.75rem] ${currentPath === '/crew' ? 'lg:relative' : ''}`}
+	>
+		<slot />
+	</div>
+</main>

@@ -1,0 +1,8 @@
+{
+	"name": "Europa",
+	"image": "./images/image-europa.webp",
+	"description": "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
+	"distance": { "value": 628, "unit": "mil. km" },
+	"travel": { "value": 3, "unit": "years" },
+	"order": 3
+}

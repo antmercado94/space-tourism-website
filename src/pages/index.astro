@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Circle from '../components/ui/Circle';
+import pageBackgroundDesktop from '../assets/bg/home/background-home-desktop.jpg';
+import pageBackgroundTablet from '../assets/bg/home/background-home-tablet.jpg';
+import pageBackgroundMobile from '../assets/bg/home/background-home-mobile.jpg';
+const bgImgSrc = {
+	desktop: pageBackgroundDesktop,
+	tablet: pageBackgroundTablet,
+	mobile: pageBackgroundMobile
+};
+const pageTitle = 'Home';
+---
+
+<Layout title={pageTitle} bgImgSrc={bgImgSrc}>
+	<main>
+		<div
+			class="animate mb-12 flex flex-col items-center gap-[5.063rem] md:mb-[5.625rem] md:gap-[9.75rem] lg:mb-[8.188rem] lg:mt-[15.688rem] lg:flex-row lg:items-end lg:justify-center lg:gap-[min(9.75rem,11vw)] xl:gap-[min(24.125rem,26.85vw)]"
+		>
+			<div class="mt-6 inline-block md:mt-[6.625rem] lg:mt-0">
+				<div class="flex flex-col items-center gap-4 md:max-w-[28.125rem] md:gap-6 lg:items-start">
+					<h1 style="--animate-order:2" class="stagger heading-5 text-primary-light-blue">
+						so, you want to travel to
+					</h1>
+					<h2 style="--animate-order:3" class="stagger heading-1 text-primary-white">space</h2>
+					<p
+						style="--animate-order:4"
+						class="stagger body-text text-center text-primary-light-blue lg:text-left"
+					>
+						Let’s face it; if you want to go to space, you might as well genuinely go to outer space
+						and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you
+						a truly out of this world experience!
+					</p>
+				</div>
+			</div>
+			<!-- explore btn -->
+			<div style="--animate-order:6" class="fadeIn">
+				<a href="/destination">
+					<Circle
+						className="h-[9.375rem] w-[9.375rem] cursor-pointer before:absolute before:-z-30 before:h-full before:w-full before:rounded-full before:bg-primary-white before:bg-opacity-[10.36%] before:transition-transform before:content-[''] hover:before:scale-[164.23%] md:h-[15.125rem] md:w-[15.125rem] lg:h-[17.125rem] lg:w-[17.125rem]"
+					>
+						<span
+							class={`text-xl uppercase text-primary-black leading-[1.438rem] tracking-[0.062em] md:text-[2rem] md:leading-[2.313rem] md:tracking-[0.0625em]`}
+							>explore</span
+						>
+					</Circle>
+				</a>
+			</div>
+		</div>
+	</main>
+</Layout>

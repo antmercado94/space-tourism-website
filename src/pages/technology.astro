@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import PageContentLayout from '../layouts/PageContentLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import TechnologyView from '../components/views/technology/TechnologyView';
+import pageBackgroundDesktop from '../assets/bg/tech/background-technology-desktop.jpg';
+import pageBackgroundTablet from '../assets/bg/tech/background-technology-tablet.jpg';
+import pageBackgroundMobile from '../assets/bg/tech/background-technology-mobile.jpg';
+
+const bgImgSrc = {
+	desktop: pageBackgroundDesktop,
+	tablet: pageBackgroundTablet,
+	mobile: pageBackgroundMobile
+};
+const pageTitle = 'Technology';
+const pageNumber = '03';
+const pageDesc = 'space launch 101';
+const allTechnology = await getCollection('technology').then((res) =>
+	res.sort((a, b) => a.data.order - b.data.order)
+);
+---
+
+<Layout title={pageTitle} bgImgSrc={bgImgSrc}>
+	<PageContentLayout>
+		<div class="flex flex-col md:mb-[5.063rem] lg:mb-[7.014vw] xl:mb-[min(6.313rem,101px)]">
+			<div class="animate flex flex-col gap-y-8 md:gap-y-14 lg:grid lg:justify-center">
+				<!-- left -->
+				<section
+					style="--animate-order:2"
+					class="stagger order-1 text-center md:text-left lg:mx-[min(6%,3.5rem)] xl:mx-0"
+				>
+					<PageHeader pageNumber={pageNumber} text={pageDesc} />
+				</section>
+				<section
+					style="--animate-order:3"
+					class="stagger order-3 lg:col-start-1 lg:row-start-2 lg:mx-[min(6%,3.5rem)] lg:self-center xl:mx-0"
+				>
+					<TechnologyView allTechnology={allTechnology} client:load />
+				</section>
+				<!-- right -->
+				<section
+					class="order-2 mb-[0.125rem] md:mb-0 md:mt-1 lg:col-start-2 lg:row-start-2 lg:-mr-6 lg:mt-0 2xl:relative"
+				>
+					<!-- crew member image -->
+					<div
+						class="full-width flex flex-col items-center lg:min-h-[32.938rem] lg:min-w-[40vw] xl:min-w-[31.563rem] 2xl:relative 2xl:left-[8.125rem]"
+					>
+						<!-- mobile image -->
+						<Image
+							style="--animate-order:4"
+							class="fadeIn h-[10.625rem] w-full object-cover md:h-[19.375rem] lg:hidden"
+							src={allTechnology[0].data.imageLandscape}
+							alt={allTechnology[0].id}
+							width={600}
+							height={600}
+							format="webp"
+							quality={100}
+							id="tech-image-landscape"
+						/>
+						<!-- desktop image -->
+						<Image
+							style="--animate-order:5"
+							class="fadeIn right-0 hidden object-contain lg:absolute lg:block lg:h-[32.938rem] lg:w-[34%] xl:w-[32.188rem] 2xl:h-full 2xl:w-auto"
+							src={allTechnology[0].data.imagePortrait}
+							alt={allTechnology[0].id}
+							width={600}
+							height={600}
+							format="webp"
+							quality={100}
+							id="tech-image-portrait"
+						/>
+					</div>
+				</section>
+			</div>
+		</div>
+	</PageContentLayout>
+</Layout>
