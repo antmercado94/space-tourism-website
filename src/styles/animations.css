@@ -3,11 +3,11 @@
 */
 .animate .stagger {
 	opacity: 0;
-	animation: 0.15s linear calc(var(--animate-order) * 0.1s) forwards stagger;
+	animation: 0.25s ease-in calc(var(--animate-order) * 0.1s) forwards stagger;
 }
 .animate .stagger--alt {
 	opacity: 0;
-	animation: 0.15s linear calc(var(--animate-order) * 0.1s) forwards stagger2;
+	animation: 0.25s ease-in calc(var(--animate-order) * 0.1s) forwards stagger2;
 }
 
 @media screen(md) {
@@ -47,11 +47,11 @@
 */
 .animate .fadeIn {
 	opacity: 0;
-	animation: 0.2s linear calc(var(--animate-order) * 0.1s) forwards fadeIn;
+	animation: 0.25s ease-in calc(var(--animate-order) * 0.1s) forwards fadeIn;
 }
 .animate .fadeIn--alt {
 	opacity: 0;
-	animation: 0.2s linear calc(var(--animate-order) * 0.1s) forwards fadeIn2;
+	animation: 0.25s ease-in calc(var(--animate-order) * 0.1s) forwards fadeIn2;
 }
 
 @media screen(md) {
