@@ -3,13 +3,11 @@
 */
 .animate .stagger {
 	opacity: 0;
-	animation: stagger ease-in 0.3s forwards 1;
-	animation-delay: calc(var(--animate-order) * 0.1s);
+	animation: 0.3s ease-in calc(var(--animate-order) * 0.1s) forwards stagger;
 }
 .animate .stagger--alt {
 	opacity: 0;
-	animation: stagger2 ease-in 0.3s forwards 1;
-	animation-delay: calc(var(--animate-order) * 0.1s);
+	animation: 0.3s ease-in calc(var(--animate-order) * 0.1s) forwards stagger2;
 }
 
 @keyframes stagger {
