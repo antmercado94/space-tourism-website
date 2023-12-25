@@ -85,7 +85,7 @@ const currentPath = removeTrailingSlash(Astro.url.pathname);
 		>
 			<Nav routes={routes} />
 			<div class="mx-6">
-				<slot transition:animate={fade({ duration: '0.4s' })} />
+				<slot transition:animate={fade({ duration: '0.25s' })} />
 			</div>
 			<Sidebar routes={routes} />
 		</div>
@@ -119,11 +119,7 @@ const currentPath = removeTrailingSlash(Astro.url.pathname);
 		/>
 
 		<!-- overlay -->
-		<div
-			transition:persist
-			class="absolute top-0 -z-40 h-full w-full bg-primary-black/25 mix-blend-overlay"
-		>
-		</div>
+		<div class="absolute top-0 -z-40 h-full w-full bg-primary-black/25 mix-blend-overlay"></div>
 
 		<script src="../scripts/sidebar-toggle.ts"></script>
 	</body>
