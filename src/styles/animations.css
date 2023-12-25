@@ -3,11 +3,22 @@
 */
 .animate .stagger {
 	opacity: 0;
-	animation: 0.3s ease-in calc(var(--animate-order) * 0.1s) forwards stagger;
+	animation: 0.15s linear calc(var(--animate-order) * 0.1s) forwards stagger;
 }
 .animate .stagger--alt {
 	opacity: 0;
-	animation: 0.3s ease-in calc(var(--animate-order) * 0.1s) forwards stagger2;
+	animation: 0.15s linear calc(var(--animate-order) * 0.1s) forwards stagger2;
+}
+
+@media screen(md) {
+	.animate .stagger {
+		opacity: 0;
+		animation: 0.3s ease-in calc(var(--animate-order) * 0.1s) forwards stagger;
+	}
+	.animate .stagger--alt {
+		opacity: 0;
+		animation: 0.3s ease-in calc(var(--animate-order) * 0.1s) forwards stagger2;
+	}
 }
 
 @keyframes stagger {
@@ -36,13 +47,22 @@
 */
 .animate .fadeIn {
 	opacity: 0;
-	animation: fadeIn ease-in 0.3s forwards 1;
-	animation-delay: calc(var(--animate-order) * 0.1s);
+	animation: 0.2s linear calc(var(--animate-order) * 0.1s) forwards fadeIn;
 }
 .animate .fadeIn--alt {
 	opacity: 0;
-	animation: fadeIn2 ease-in 0.3s forwards 1;
-	animation-delay: calc(var(--animate-order) * 0.1s);
+	animation: 0.2s linear calc(var(--animate-order) * 0.1s) forwards fadeIn2;
+}
+
+@media screen(md) {
+	.animate .fadeIn {
+		opacity: 0;
+		animation: 0.3s ease-in calc(var(--animate-order) * 0.1s) forwards fadeIn;
+	}
+	.animate .fadeIn--alt {
+		opacity: 0;
+		animation: 0.3s ease-in calc(var(--animate-order) * 0.1s) forwards fadeIn2;
+	}
 }
 
 @keyframes fadeIn {
