@@ -36,7 +36,10 @@ const currentPath = removeTrailingSlash(Astro.url.pathname);
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta
+			name="description"
+			content="A multi-page space tourism website built with Astro, based on designs provided by Frontend Mentor."
+		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/favicon-32x32.png" />
 		<link
@@ -68,7 +71,7 @@ const currentPath = removeTrailingSlash(Astro.url.pathname);
 			crossorigin
 		/>
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{`Space Tourism | ${title}`}</title>
 		<ViewTransitions />
 	</head>
 	<body
