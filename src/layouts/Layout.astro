@@ -77,53 +77,54 @@ const currentPath = removeTrailingSlash(Astro.url.pathname);
 	<body
 		class="relative inline-block h-auto min-h-screen w-full overflow-x-hidden lg:overflow-y-hidden 3xl:overflow-auto lgMaxHeight:overflow-y-visible"
 	>
-		<div
-			class={`${
-				currentPath === '/destination'
-					? 'min-h-[850px]'
-					: currentPath === '/crew' || currentPath === '/technology'
-					  ? 'min-h-[710px] overflow-x-clip'
-					  : ''
-			} lg:overflow-y-hidden lgMaxHeight:overflow-y-visible lgMinHeight:overflow-y-visible`}
-		>
-			<Nav routes={routes} />
-			<div class="mx-6">
-				<slot transition:animate={fade({ duration: '0.25s' })} />
+		<main>
+			<div
+				class={`${
+					currentPath === '/destination'
+						? 'min-h-[850px]'
+						: currentPath === '/crew' || currentPath === '/technology'
+						  ? 'min-h-[710px] overflow-x-clip'
+						  : ''
+				} lg:overflow-y-hidden lgMaxHeight:overflow-y-visible lgMinHeight:overflow-y-visible`}
+			>
+				<Nav routes={routes} />
+				<div class="mx-6">
+					<slot transition:animate={fade({ duration: '0.25s' })} />
+				</div>
+				<Sidebar routes={routes} />
 			</div>
-			<Sidebar routes={routes} />
-		</div>
 
-		<!-- desktop image -->
-		<Image
-			class="absolute top-0 -z-50 hidden h-full w-full object-cover lg:block"
-			src={bgImgSrc.desktop}
-			alt=""
-			format="webp"
-			quality={100}
-			loading={'eager'}
-		/>
-		<!-- tablet image -->
-		<Image
-			class="absolute top-0 -z-50 hidden h-full w-full object-cover md:block lg:hidden"
-			src={bgImgSrc.tablet}
-			alt=""
-			format="webp"
-			quality={100}
-			loading={'eager'}
-		/>
-		<!-- mobile image -->
-		<Image
-			class="absolute top-0 -z-50 h-full w-full object-cover md:hidden"
-			src={bgImgSrc.mobile}
-			alt=""
-			format="webp"
-			quality={100}
-			loading={'eager'}
-		/>
+			<!-- desktop image -->
+			<Image
+				class="absolute top-0 -z-50 hidden h-full w-full object-cover lg:block"
+				src={bgImgSrc.desktop}
+				alt=""
+				format="webp"
+				quality={100}
+				loading={'eager'}
+			/>
+			<!-- tablet image -->
+			<Image
+				class="absolute top-0 -z-50 hidden h-full w-full object-cover md:block lg:hidden"
+				src={bgImgSrc.tablet}
+				alt=""
+				format="webp"
+				quality={100}
+				loading={'eager'}
+			/>
+			<!-- mobile image -->
+			<Image
+				class="absolute top-0 -z-50 h-full w-full object-cover md:hidden"
+				src={bgImgSrc.mobile}
+				alt=""
+				format="webp"
+				quality={100}
+				loading={'eager'}
+			/>
 
-		<!-- overlay -->
-		<div class="absolute top-0 -z-40 h-full w-full bg-primary-black/25 mix-blend-overlay"></div>
-
+			<!-- overlay -->
+			<div class="absolute top-0 -z-40 h-full w-full bg-primary-black/25 mix-blend-overlay"></div>
+		</main>
 		<script src="../scripts/sidebar-toggle.ts"></script>
 	</body>
 </html>
