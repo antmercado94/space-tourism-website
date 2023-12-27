@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/space-tourism-multipage-website-using-astro-IV86spLLbN](https://www.frontendmentor.io/solutions/space-tourism-multipage-website-using-astro-IV86spLLbN)
 - Live Site URL: [https://am-space-tourism-website.netlify.app/](https://am-space-tourism-website.netlify.app/)
 
 ## My process
